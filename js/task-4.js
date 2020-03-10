@@ -3,13 +3,17 @@
 const formatString = function(string) {
   if (string.length > 40) {
     const deletedScores = string.slice(0, 40);
-    console.log(deletedScores + '...');
+    return deletedScores + '...';
   } else {
-    console.log(string);
+    return string;
   }
 };
 
-formatString('Curabitur ligula sapien, tincidunt non.');
-formatString('Vestibulum facilisis, purus nec pulvinar iaculis.');
-formatString('Curabitur ligula sapien.');
-formatString('Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.');
+console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+console.log(formatString('Curabitur ligula sapien.'));
+console.log(
+  formatString(
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+  ),
+);

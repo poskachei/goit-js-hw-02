@@ -1,14 +1,17 @@
 'use strict';
 
-let message = prompt(`Введите число:`);
-let input = message;
+let input;
+let total = 0;
+const number = [];
 
-if (input !== null) {
-  const number = [];
-  let newNumber = number.push(input);
-} else {
-  let total = 0;
-  total += input;
-  alert('Общая сумма чисел равна ' + total);
-}
-// Не доработано
+do {
+  input = prompt(`Введите число:`);
+  let newNumber = number.push(Number(input));
+  if (Number.isNaN(Number(input))) {
+    alert('Было введено не число, попробуйте еще раз');
+  } else {
+    total += Number(input);
+  }
+} while (input !== null);
+alert('Общая сумма чисел равна ' + total);
+console.log(number);
