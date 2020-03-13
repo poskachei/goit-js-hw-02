@@ -2,16 +2,21 @@
 
 let input;
 let total = 0;
-const number = [];
+let number = [];
 
 do {
   input = prompt(`Введите число:`);
-  let newNumber = number.push(Number(input));
   if (Number.isNaN(Number(input))) {
     alert('Было введено не число, попробуйте еще раз');
   } else {
-    total += Number(input);
+    number.push(Number(input));
   }
 } while (input !== null);
-alert('Общая сумма чисел равна ' + total);
+
+for (let i = 0; i < number.length; i++) {
+  if (input === null) {
+    total += number[i];
+  }
+  alert('Общая сумма чисел равна ' + total);
+}
 console.log(number);
